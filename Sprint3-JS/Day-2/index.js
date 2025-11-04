@@ -26,3 +26,52 @@ let a=console.log(1/0);//Infinity
 let a="hello";
 console.log(a/2) //=>"Hello"/2 
 //output as NaN
+
+let a=33n;
+console.log(typeof(a));
+//Output as bigInt
+
+let a=Infinity;
+console.log(typeof(a));
+//Output as number
+
+
+//In js we can declare string in 3 types
+let a='hello';
+a="Hello";
+a=`Hello`; //Usage backticks this has more edge compared to others
+
+let age=24;
+console.log(`so my age is currently ${age}`);
+
+//hierarchy of string --> backticks(Strng interpolation and called as tempplate literals)-->double-->single ticks
+//String is immutable
+let b="Hello";
+b[2]="2";
+console.log(b);
+
+
+//boolean = true/false
+let age=null;//This value does not belong to any data type
+//reference to non existing object / null pointer
+
+let gender=undefined;//value is not assigned to variable
+
+
+//Symbols,used to create unique identifiers,these are used to give completeness to a data type
+
+
+//Object
+let obj = {
+    id: 123,
+    message: "hello",
+    bigNumber: 33n,
+    isActive: true,
+    nested: {
+        code: 456,
+        topic: "IoT",
+        available: false
+    }
+};
+
+
