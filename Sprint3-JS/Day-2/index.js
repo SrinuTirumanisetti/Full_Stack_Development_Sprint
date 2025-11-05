@@ -74,4 +74,77 @@ let obj = {
     }
 };
 
+//we have unary,ternary operators in js
+//a+b=>'a,b' are both operands and '+' is operator
+//if the operator has two operands it is binary operator a+b
+//if the operator has only one operand(-a) unary
+//+,-,*,/,%,**(exponentiation)
+
+//binary + in JS is used for string concatenation.
+console.log("hii"+"srinu");
+//hiisrinu
+console.log("hii"*3);
+//NaN
+
+let x=Number("227");
+console.log(typeof(x));
+//Number
+
+//unary + in js,is used to type cast to any data type consist of number in it,to number data type.
+let y=+("123");
+console.log(typeof(y));
+//Number'
+
+let b=+("hello");
+console.log(typeof(b),b);
+//Number NaN
+
+let c='1'+2;
+console.log(c);
+//12
+console.log(typeof(c));
+//string
+
+//when we use binary +,if either of operand is actually a string ,then other operand will be type converted to string
+console.log(2+3+'1');
+//first binary plus is used to add numbers (5+'1')=>51
+//51
+
+console.log('1'+2+2);
+//first binary plus is used to converts 2 to '2'=>('12'+2)=>'122'
+
+// , and = as an operators in JS ,"=" is an assignment operator
+//let a=b=c=2 chaining of values
+let z=1;
+z=z+1;
+z=z*2;
+z=z/2;
+
+let a,b,c,d;
+
+//postfix and prefix increment/decrement
+let w=1;
+let p=w+1;
+console.log(w,p);
+//1 2
+
+//b=b+1 //b+=1 => b++(postfix)/++b(prefix)
+//when we use operator ++/-- before the operand it is prefix
+//when we use operator ++/-- after the operand it is postfix
+let b=1;
+let c=b++;
+let d=++b;
+let e=b--;
+let f=--b;
+console.log(b,c,d,e,f);
+//1 1 3 3 1
+
+//when we do postfix,we first use the value in operand and then we will increment/decrement
+//when we do prefix,we first increent/decrement and then assign the value; 
+
+
+
+
+
+
 
