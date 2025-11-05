@@ -22,7 +22,7 @@ console.log('glow'>'glee')//in this case where js will check letter by letter
 console.log("Bee">"Be");
 //true
 
-a=Number('b');
+let a=Number('b');
 console.log(a);
 //NaN //it does not give value like other prog languages
 
@@ -37,7 +37,7 @@ console.log('01'==1);
 //true
 
 //two values are equal,one of them is true as boolean and the other one is false;
-let a=0;
+//let a=0;
 console.log(Boolean(a));
 //false
 
@@ -82,3 +82,46 @@ console.log(null==0);
 
 // == does not convert null to 0 
 //where as others convert null to 0 and compare
+
+console.log(NaN==NaN,NaN===NaN);
+//false and false
+
+console.log(true+1);
+//2
+
+//binary + will any operand to number when operand is not a string.
+
+console.log(null==null,null===null);
+//true true
+
+console.log(null==0,null===0);
+//false false
+
+//Conditional operators
+
+let age=18;
+if(age>=18){
+    console.log(`you are adult`);
+}
+
+//conditional branching
+// let year=prompt('what is your age');
+// if(year>=18){
+//     console.log(`you are adult`);
+// }
+// else{
+//     console.log(`you are child`);
+// }
+
+//conditional operator '?'
+//let result=condition?value1:value2;
+let access=age>18?"yes":"No";
+console.log(access);
+
+// null>18=>0>18=>false
+let ag=70;
+let msg=(ag<3)?"hi,kid":(ag<18)?"Hello":(ag<100)?"Greetings":"you are superman/women";
+console.log(msg);
+
+//alert,confirm,prompt are given by browser
+// ||,&&,!,??
