@@ -55,14 +55,53 @@ let resu=a??b;
 console.log(resu);
 // resu=0 output
 
-//?? returns the first defined value;
+//?? returns the first defined value and last undefined value;
 //|| return the first truth value and also last false value
 //&& return first false value and also last tru value
 
 //you have a login page and where you are actually trying to take values of firstName and lastName
-if(firstName??middleName??lastName){
-    console.log("you entered all details");
+// if(firstName??middleName??lastName){
+//     console.log("you entered all details");
+// }
+// else{
+//     console.log("you have enter"); }
+
+let resul=0??false??"hello";
+console.log(resul);
+//0
+let resulte=0||false||"hello";
+console.log(resulte);
+//hello
+
+//Loops
+
+let i=0;//Initialize the variable
+while(i<5){
+    console.log(i);
+    i++;//increment of initialized variable
 }
-else{
-    console.log("you have enter");
+console.log("you are out of loop as condition is false");
+
+for(let i=0;i<5;i++){
+    console.log(i);
 }
+//initialization actually happens once,which when loop is getting started
+
+
+//break,continue
+
+for(let i=0;i<5;i++){
+    if(i==2){
+        continue;
+    }
+    console.log(i);
+}
+console.log("Loop ended");
+
+for(let i=0;i<5;i++){
+    if(i==2){
+        break;
+    }
+    console.log(i);
+}
+console.log("Loop ended");
