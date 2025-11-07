@@ -122,3 +122,98 @@ console.log(user.name);
 
 //important:-Shallow copying and hard copying
 
+user={
+    name:"john",
+    age:30,
+};
+user.sayHi=function(){
+    console.log("Hello");
+};
+console.log(user);
+user.sayHi();
+
+console.log(user.isPrototypeOf(Object));
+
+// user={
+//     name:"john",
+//     age:20,
+//     sayHi:function(){
+//         console.log(`${user.name} is the owner of this object`);
+//     }
+// }
+// user.sayHi();
+
+//we can also use "this" here
+user={
+    name:"john",
+    age:20,
+    sayHi:function(){
+        console.log(`${this.name} is the owner of this object`);
+    }
+}
+user.sayHi();
+
+//in JS ,this can be used in any function ,even it is not method of an object=>
+//this in Js is unbound,
+//example
+let name="akbar";
+function sayHi(name){
+    name="peter";
+    console.log(`${this} is owner of this function`);
+}
+sayHi();
+//undefined is owner of this fucntion
+//above we have clearly observed that this.name is not giving any name displayed
+//this is unbound it still points to global object given by browser
+
+//Arrays
+//defining using constructor fucntion and also other one is array literals
+//let arr=new Array();
+
+let arr=["apple",23,false,"banana"];
+console.log(arr[0]);
+arr[1]=45;
+console.log(arr[1]);//we use index to access element in array
+console.log(arr.length);//gives length of array
+
+console.log(arr.at(-1));
+//when we have to access elemnts from last 
+//banana
+
+console.log(arr.at(-3));//accessing :-when we have to access from right to left;
+
+console.log(arr[arr.length-1]);//other method of accessing from last element
+
+//four methods :- pop/push,shift/unshift
+//data structure queue is one of the most common uses f an array
+//push=>appends an element to end
+//pop=>takes an element from end of array
+//shift=>it gets an element from begining of array
+
+console.log(arr.push(-23));
+//5 as output
+
+console.log(arr);
+//prints [ 'apple', 45, false, 'banana', -23 ]
+
+arr.pop(-23);
+//-23 as output
+
+console.log(arr.shift());
+console.log(arr);
+arr.unshift("Apple");
+console.log(arr);
+arr.unshift("Nothing");
+console.log(arr);
+
+//push and unshift can add multiple elements at once
+//push/pop run faster,while shift/unshift are slow.
+//Dont compare arrays with ==
+console.log([]==[]);
+//false
+console.log([0]==[0]);
+//false
+
+//pop,push,shift,unshift are used to add/remove the element
+//splice,slice,concat,forEach,indexOf,find,filter,map,reduce,sort reverse
+//above methods are important fir interview point which will be learned next class.
