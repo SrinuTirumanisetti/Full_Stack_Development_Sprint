@@ -35,13 +35,48 @@ console.log(sub);
 //a host environment provides its own objects and func
 //in addition to language core.
 //we browser is one such a host where it provides features
-//to contral we pages
+//to control we pages
 //Node.js provides server side features and so on.
 //root object called 'window' object.it has 2 roles
 //1)it is a global obj for JS
 //2)it represents browser window and methods to control it.
 
-function sayHi(){
+function sayHi() {
     console.log("Hello World");
 }
 
+sayHi();           
+global.sayHi = sayHi;
+global.sayHi();
+
+console.log(global.innerHeight);
+
+//DOM=>Document Object Model,represents all page content as objects
+//that can be modified
+
+//document object is main "entry point" to page
+//we can change anything on page using document object
+//is DOM is constrained for browsers?(Interview questions)
+//NO,DOM specifications explains the structure of document and
+//provides objects to manipulate it .there are non-browser instruments
+//that uses dom too.
+//CSSOM=CSS object model for CSS rules
+
+//BOM,Browser Object Model
+//it respresnts additional objects provided by browser for 
+//working with everything except the document
+//Navigator Object,background info about the browser and OS
+console.log(navigator.userAgent);
+console.log(navigator.platform);
+
+console.log(location.href);
+//Location Obj provided by BOM,allows to read the current URL
+//  & can redirect the browser to new one
+if(confirm("Go to netflix")){
+    location.href="https://www.netflix.com";
+}
+
+//alert,confirm,prompt are part of BOM,as these are broswer
+//related method.
+
+confirm("Are you 18+ ?");
