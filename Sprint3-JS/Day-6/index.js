@@ -25,3 +25,23 @@ div(4,2);
 
 let sub = new Function();
 console.log(sub);
+
+
+//DOM Manipulations
+
+//JS was initially created for web browsers,it evolved into 
+//language with many uses and platforms
+//JS specification call that platforms as host environment
+//a host environment provides its own objects and func
+//in addition to language core.
+//we browser is one such a host where it provides features
+//to contral we pages
+//Node.js provides server side features and so on.
+//root object called 'window' object.it has 2 roles
+//1)it is a global obj for JS
+//2)it represents browser window and methods to control it.
+
+function sayHi(){
+    console.log("Hello World");
+}
+
