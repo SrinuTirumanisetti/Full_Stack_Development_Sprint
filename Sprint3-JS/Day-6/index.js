@@ -80,3 +80,22 @@ if(confirm("Go to netflix")){
 //related method.
 
 confirm("Are you 18+ ?");
+
+
+//Backbone of HTML document is Tags
+//Acc to DOM,every HTML tag is an object
+//Everything that is present on screen itself is JS object
+//Everything that will be rendered on to screen itself is JS object
+//we can apply object methods and also array methods onto 
+// HTML elements
+document.body.style.color="grey";
+//style.color to chsnge the text color of document.body
+//DOM represents HTML as a tree structure of tags
+//Every Tree node is object,Tags are element node,
+//<HTML> is root ,<Head>,<body> are children pf <HTML>
+//element itself
+
+//All operations on DOM start with document obj,as it is 
+//entry point to DOM
+//document=>document.head/document.body
+//document.documentElement=>document.html
