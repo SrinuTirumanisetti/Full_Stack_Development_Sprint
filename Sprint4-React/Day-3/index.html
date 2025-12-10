@@ -1,0 +1,58 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .count{
+            margin: 30px;
+        }
+        .counter{
+            border:2px solid black;
+            padding: 10rem;
+        }
+    </style>
+</head>
+<body>
+     <div id="root"></div>
+    <script type="text/babel">
+        //Lets build a coounter,where i have a + operator to increase the value in counter 
+        // whereas,- button reduce value in counter
+        //In react we can manipulate items using states,as React follows state variables
+        //useState by default gives us the array of items as 1st argument,and
+        //it gives fucntion that helps to update the state variable.
+        function Counter(){
+            //const count=React.useState(0);
+            //useState(0)-> 0 is the initial value of the state variable
+            const [count,setCount]=React.useState(0);
+            //count=0 is the state variable,which is meant that count is overview by REact algo
+            const increment=()=>{
+                console.log("Incremented");//when ever this fucntion is called then in console we print
+                //that this fucntion is actually called
+                setCount(count+1);//Here setCount is actually incrementing the count variable by 1
+                //setCount actually uodates the state variable count after update
+                //this count value is changed from 0 to new value.
+            }
+            const decrement=()=>{
+                console.log("Decremented");
+                setCount(count-1);
+            }
+            return <div className="counter">
+                <button onClick={increment}>+</button>
+                <span className="count">{count}</span>
+                <button onClick={decrement}>-</button>
+            </div>
+        }
+        console.log(React);
+        ReactDOM.render(<Counter/>,document.getElementById("root"));
+    </script>
+</body>
+</html>
+
+<!--
+1)whenever you are building anything in React,build it in
+static website form 
+-->
