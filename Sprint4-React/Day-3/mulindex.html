@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>States</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        .counter{
+            margin-top:2rem;
+            border-bottom: 2px solid grey;
+            padding-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+     <div id="root">
+     </div>
+     <script type="text/babel">
+        function Counter(props){
+            const {index,value}=props; //Destructuring props object
+            const [count,setCount]=React.useState(value);
+            //count=value
+            const increment=()=>{
+                console.log("Incremented");
+                setCount(count+1);
+            }
+            const decrement=()=>{
+                console.log("Decremented");
+                setCount(count-1);
+            }
+            return <div className="counter">
+                <h2>Counter Component - {index}</h2>
+                <button onClick={increment}>+</button>
+                <span>{count}</span>
+                <button onClick={decrement}>-</button>
+            </div>
+        }
+        function CounterParent(){ //we use this small components to make it very large
+            return <div>
+                <Counter index={1} value={0}/>{/*I want the value to be 0 as initial value of counter*/}
+                <Counter index={2} value={5}/>{/*I want the value to be 5*/}
+                <Counter index={3} value={10}/>{/*I want the value to be 10 as Initial value of counter*/}
+            </div>
+        }
+        console.log(React);
+        ReactDOM.render(<CounterParent/>,document.getElementById("root"));
+     </script>
+</body>
+</html>
+
+<!--
+1)usecases of state wrt to compenent:to make it dynamic
+2)we can create complex compenent by using multiple independent component.
+3)Props:to pass data from parent to child component,Majorly the data specific to compoenents.
+-->
