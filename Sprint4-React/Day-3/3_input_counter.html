@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input count</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+     <div id="root">
+
+     </div>
+     <script type="text/babel">
+        function InputCounter(){
+            const [count,setCount]=React.useState(0);
+            const [value,setValue]=React.useState("");
+            const Increment=()=>{
+                setCount(count+1);
+            }
+            const Decrement=()=>{
+                setCount(count-1);
+            }
+            const handleValue=(event)=>{//handler function which actually handle any change in input element
+                setValue(event.target.value);//event =onChange,Target=input,value
+            }
+            const SetValue=()=>{//function to set the value from input to count
+                const intValue=parseInt(value);//parsing the string value to integer
+                if(!isNaN(intValue)){//if the parsed value is a number then only we set it to count
+                    setCount(intValue);
+                }
+            }
+            return <div>
+                <div>
+                    <input type="text" value={value} onChange={handleValue}/>{/*we are handling Ui uodate of Inout with state*/}
+                    <button onClick={SetValue}>Set</button>
+                </div>
+                <button onClick={Increment}>+</button>
+                <span>{count}</span>  
+                <button onClick={Decrement}>-</button>
+             </div>
+        }
+        ReactDOM.render(<InputCounter/>,document.getElementById("root"));
+     </script>
+</body>
+</html>
