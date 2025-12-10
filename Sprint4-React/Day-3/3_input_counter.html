@@ -23,6 +23,7 @@
             }
             const handleValue=(event)=>{//handler function which actually handle any change in input element
                 setValue(event.target.value);//event =onChange,Target=input,value
+                //we are using state variables to handle the UI part of page
             }
             const SetValue=()=>{//function to set the value from input to count
                 const intValue=parseInt(value);//parsing the string value to integer
@@ -44,3 +45,8 @@
      </script>
 </body>
 </html>
+
+
+<!--when we control UI change of elements like input using 
+state then those components are known as controlled components
+-->
