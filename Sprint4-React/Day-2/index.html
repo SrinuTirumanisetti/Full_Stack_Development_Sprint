@@ -1,0 +1,49 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to React</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+     <!--what is react-->
+     <!--what does the react actually acheives?
+        1)reduces the usage of cost for DOM operations as ,DOM operations are costly
+        2)it tries to built using a SPA(single page application) architecture
+        SPA? we do not to reupload another html when navigating 
+        document=> DOM operations,is actually given by the environment of JS
+        document API,is the 3rd least used API in JS 
+        3)React on other hand,uses a history API,inorder to modify things-->
+
+        <!--create-react-app,vite etc-->
+        <!-- CDN=> content delivery network-->
+        <!--React(Algorithm that modifies UI),React-DOM(is support for React algorithm)-->
+        <!--React focuses on creating the SPA's-->
+        <!--whole application lives inside below div-->
+        
+        <div id="root"></div>
+
+        <script type="text/babel">
+            function Hello(){
+                let name="react";
+                //return <h1>Welcome to {name}</h1>
+                return `<h1>Welcome to ${name}</h1>`;//JS code
+            }
+            ReactDOM.render(<Hello></Hello>,document.getElementById('root'));
+        </script>
+</body>
+</html>
+
+<!--
+1)Components in React :-These are independent,reusable pieces of code,they 
+serve the same purpose of JS functions,but work in isolation and return HTML.
+2)Browser Actually understands only HTML,CSS and JS.
+3)JSX:-JSX is a syntax extension to JS,used with React to describe what the UI should look like
+JS+XML=>Browser need a converter to convert JSX to JS.
+for that we use Babel.
+4)Babel:-It is a JS compiler that converts the JSX code into JS code that browsers can understand.
+5)JSX is inspired from the template literals of JS(backticks) to write HTML inside JS.
+
+-->
