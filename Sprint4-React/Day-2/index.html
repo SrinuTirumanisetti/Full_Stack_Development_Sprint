@@ -26,12 +26,26 @@
         <div id="root"></div>
 
         <script type="text/babel">
-            function Hello(){
-                let name="react";
-                //return <h1>Welcome to {name}</h1>
-                return `<h1>Welcome to ${name}</h1>`;//JS code
+            function Hello(props){
+                let {name}=props;//At this line Destructuring is done
+                //let {name,day}={name:"React",day:2}
+                //name="React",day=2
+                return <h1>Welcome to the 2nd day of sprint in {name}</h1>
+                //return `<h1>Welcome to ${name}</h1>`;//JS code
             }
-            ReactDOM.render(<Hello></Hello>,document.getElementById('root'));
+            function HelloParent(){
+                return <div>
+                    <Hello name={"React"}></Hello>
+                    <Hello name={"JavaScript"}></Hello>
+                    <Hello name={"HTML"}></Hello>
+                    </div>
+            }
+            ReactDOM.render(<HelloParent></HelloParent>,document.getElementById('root'));
+            /*
+            let object={
+            name:"React",
+            day:2}
+            */
         </script>
 </body>
 </html>
@@ -45,5 +59,13 @@ JS+XML=>Browser need a converter to convert JSX to JS.
 for that we use Babel.
 4)Babel:-It is a JS compiler that converts the JSX code into JS code that browsers can understand.
 5)JSX is inspired from the template literals of JS(backticks) to write HTML inside JS.
-
+6)props:-Props are inputs to React components.
+for every given component,props are kind of parameters or attributes that are used to pass data.
+7)when we send properties/attributes with values to any given component,,the 
+compenent in react receive all of them in object format.why?
+as to gather all of attributes for component react follows JSON notation.
+8)In react we are trying to break a large component into smaller components.
+and rendering them using one single parent component.
+where larger componennt,has multiple smaller components inside it.
+but chunk itself is returning HTML code and we have these smaller components a lot inside it.
 -->
