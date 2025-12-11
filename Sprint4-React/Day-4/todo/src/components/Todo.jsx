@@ -13,12 +13,18 @@ function Todo() {
       const newTaskArray=[...taskArray,newTask];
       setTaskArray(newTaskArray); //we are using newly created array and keeping the old array values as it is using spread operator
   }
+    const handleDelete=(idx)=>{
+    const filteredTasks=taskArray.filter((task,cIdx)=>{
+      return cIdx!=idx
+    })
+    setTaskArray(filteredTasks);//taskArr=filteredTasks
+  }
   
 
   return (
       <>
         <InputBox handleClick={handleClick}></InputBox>
-        <List taskArray={taskArray}></List>
+        <List taskArray={taskArray} handleDelete={handleDelete}></List>
       </>
   )
 }

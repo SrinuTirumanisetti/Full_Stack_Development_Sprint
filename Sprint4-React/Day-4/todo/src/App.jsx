@@ -22,5 +22,12 @@ a scope to increase its scale then we need to separate those components into sma
 we are dividing  them into different components. or
 that inorder to scale we need to focus on these components individually,
 so that the reason we are dividing them into different components.
-
+7)whenever we are actuslly comminicating with child elements we will
+use props to send the data from parent to child
+8)whenever we want to hve communication from child to parent then we send a fucntion
+to parent,where parent will use result of function and uodate the state variable
+that it have 
+9)in React,we dont have thing known as child to child communication
+whic is here we need communicate with sibling elements through parent comp only
+as in react we have a tree structure of repres between chiild and parent only.
 */
