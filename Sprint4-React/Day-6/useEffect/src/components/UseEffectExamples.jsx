@@ -21,13 +21,22 @@ function UseEffectExamples() {
     //1st case we see what happens when we have empty dependency array
     function firstCb(){
         console.log("first useEffect");
+        return function(){
+            console.log("cleanup for useEffect with Empty Dependency")
+        }
     }
 
     function secondCb(){
         console.log("second useEffect");
+        return function(){
+            console.log("cleanup for useEffect with no Dependency");
+        }
     }
     function thirdCb(){
         console.log("third useEffect");
+        return function(){
+            console.log("cleanup for useEffect with TaskList Dependency")
+        }
     }
     //1st version -> only it's cb fn only once aftrer first render
     //useEffect(firstCb,[]);
@@ -76,3 +85,18 @@ function Task(props){
 
 
 export default UseEffectExamples
+
+/*
+* useEffect->to be called after render
+* 1.cb is called once in the lifetime=>useEffect(fn,[])
+*   cleanup ->after component is removed then cleanup is callled
+*   usecase->onpage first load data fetching
+*  2.cb is called n number of tiems in lifetime ->useEffect(fn)
+* cleanup->before next useEffect call happens this cleanup function will be executed
+* usecase->autosave for every 5 secs,where cleanup code will actually update the state variable
+ that is responsible to store the written code on the screen
+*   3.cb is called if the dependency updates number of times in lifetime->useEffect(fn,[statevariable]);
+*    cleanup->before next useEffect call happens then clean up will be 
+    called 
+*   useCase:-
+*/ 
