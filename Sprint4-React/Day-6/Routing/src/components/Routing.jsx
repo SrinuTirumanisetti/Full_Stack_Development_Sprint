@@ -1,5 +1,5 @@
-import {useState,useEffect,React} from 'react'
-import {Routes,Route,Link,useParams} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Routes, Route, Link, useParams, Navigate, Outlet } from 'react-router-dom'
 
 function Routing() {
   return (
@@ -19,16 +19,20 @@ function Routing() {
         </nav>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/Listing" element={<Listing />} />
-          <Route path="/users/:id" element={<Users isAdmin={true}></Users>}></Route>
+          <Route path="/about/*" element={<About />} />
 
+          <Route path="/Listing" element={<Listing />} />
+          {/*The below route is a dynamic Route */}
+          <Route path="/users/:id" element={<Users isAdmin={true}></Users>}></Route>
+          {/*Redirecting Routing */}
+          <Route path="/" element={<Navigate to="/home"></Navigate>}></Route>
           {/* the below path '*' is a wildcard entry */}
           <Route path="*" element={<PageNotFound />} />
         </Routes>
 
     </div> 
   )
+}
   /*
   1)Normal/Static Routing
   2)Link Tag:-whenever we use it reload does not happen when we go from one page to other
@@ -41,7 +45,10 @@ function Routing() {
   //Dynamic Routing
   function Users(props) {
     const params = useParams();
-    const [user, setUser] = useState(null);
+    const [user, setUser] = useState(null);//user=null
+
+    // using prop once to avoid unused warning
+    console.log(props.isAdmin);
 
     useEffect(() => {
       const fetchData = async () => {
@@ -71,15 +78,31 @@ function Routing() {
   function Home(){
     return (<h3>Home Page</h3>)
   }
-  function About(){
-    return (<h3>About Page</h3>)
+    function About(){
+      return (
+        <>
+          <h3>About Page</h3>
+          <Routes>
+            <Route path="company" element={<Company></Company>}></Route>
+            <Route path="company" element={<Company></Company>}></Route>
+          </Routes>
+        </>
+      )
+    }
+
+
+  function Company(){
+    return <h2>Congrats you are part of cinema</h2>
   }
+  function Founder(){
+    return <h2>Hero is Mahesh Babu</h2>
+  }
+
   function Listing(){
     return (<h3>Listing Page</h3>)
   }
   function PageNotFound(){
     return (<h3>Page Not Found</h3>)
   }
-}
 
 export default Routing
